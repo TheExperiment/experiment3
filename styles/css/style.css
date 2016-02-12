@@ -1,0 +1,493 @@
+@charset "utf-8";
+.hideBackface {
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.box-sizing {
+  -o-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.centerY {
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.centerX {
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.centerXY {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+.clearAnimation {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+}
+.blink {
+  -webkit-animation: blink 1s infinite;
+  -moz-animation: blink 1s infinite;
+  animation: blink 1s infinite;
+}
+.pulse {
+  -webkit-animation: pulse 2s infinite;
+  -moz-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+}
+@-webkit-keyframes revealLetter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-moz-keyframes revealLetter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes revealLetter {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes revealLetterBlur {
+  from {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+  }
+}
+@-moz-keyframes revealLetterBlur {
+  from {
+    opacity: 0;
+    -moz-filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    -moz-filter: blur(0px);
+  }
+}
+@keyframes revealLetterBlur {
+  from {
+    opacity: 0;
+    -webkit-filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+  }
+}
+@keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .9;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@-moz-keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .9;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@-webkit-keyframes blink {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .9;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@-webkit-keyframes pulse {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .9;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -o-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+@-moz-keyframes pulse {
+  0% {
+    opacity: .2;
+  }
+  50% {
+    opacity: .9;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    -moz-transform: translate3d(-50%, 0, 0);
+    -ms-transform: translate3d(-50%, 0, 0);
+    -o-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  100% {
+    opacity: .2;
+  }
+}
+keyframes pulse 0% {
+  opacity: .2;
+}
+keyframes pulse 50% {
+  opacity: .9;
+  -webkit-transform: translate3d(-50%, 0, 0);
+  -moz-transform: translate3d(-50%, 0, 0);
+  -ms-transform: translate3d(-50%, 0, 0);
+  -o-transform: translate3d(-50%, 0, 0);
+  transform: translate3d(-50%, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+keyframes pulse 100% {
+  opacity: .2;
+}
+/**********       EASING       **********/
+/* CSS Document */
+/**********       BASE        **********/
+html {
+  box-sizing: border-box;
+}
+html a {
+  color: #EEEEEE;
+  text-decoration: none;
+  font-size: 1em;
+}
+html a:visited {
+  color: #EEEEEE;
+}
+html a:hover {
+  color: #EEEEEE;
+}
+html a:focus {
+  outline: thin dotted;
+}
+html a:hover,
+html a:active {
+  outline: 0;
+}
+body {
+  margin: 0;
+  -webkit-overflow-scrolling: touch;
+  color: #EEEEEE;
+  background: #EEEEEE;
+  font-size: 16px;
+  font-family: 'Avenir LT W01_45 Book1475508';
+  letter-spacing: .1rem;
+}
+.touch {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+/* ===== Primary Styles ========================================================
+   Author: Nick Jones / The Experiment
+   ========================================================================== */
+::selection {
+  background: #EEEEEE;
+}
+h2 {
+  position: absolute;
+  color: #20A2FF;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: 50px;
+  font-weight: 100;
+  font-size: 2em;
+  text-align: center;
+}
+h1 {
+  position: fixed;
+  text-align: center;
+  color: #20A2FF;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-top: 6px solid;
+  border-bottom: 2px solid;
+  padding: 50px 0;
+  margin: 200px 0 0;
+  font-size: 5em;
+  font-weight: 100;
+  letter-spacing: .1rem;
+}
+@media screen and (min-width: 1000px) {
+  h1 {
+    display: none;
+  }
+}
+.literally {
+  z-index: 20;
+  position: fixed;
+  width: 420px;
+  height: 1000px;
+  -webit-filter: blur(3px);
+}
+.literally input[type='button'] {
+  position: absolute;
+  display: block;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  bottom: 10px;
+}
+button,
+input[type='button'] {
+  display: none;
+  padding: 2vw 3vw;
+  background: transparent;
+  color: #fff;
+  border: 3px solid #20A2FF;
+  outline: none;
+  z-index: 40;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  border-radius: 5px;
+  font-size: 3em;
+  font-family: 'Avenir LT W01_45 Book1475508';
+  letter-spacing: .1rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  position: fixed;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  top: 730px;
+  cursor: pointer;
+}
+@media screen and (min-width: 1000px) {
+  button,
+  input[type='button'] {
+    display: none;
+  }
+}
+button.drawn,
+input[type='button'].drawn {
+  display: block;
+}
+button:hover,
+input[type='button']:hover {
+  color: #20A2FF;
+}
+.message {
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  -moz-transform: translate3d(-50%, -50%, 0);
+  -ms-transform: translate3d(-50%, -50%, 0);
+  -o-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  -ms-backface-visibility: hidden;
+  -o-backface-visibility: hidden;
+  backface-visibility: hidden;
+  background: #20A2FF;
+  padding: 30px 50px;
+  color: #fff;
+  -webkit-transition-duration: 0.5s;
+  -moz-transition-duration: 0.5s;
+  -o-transition-duration: 0.5s;
+  -ms-transition-duration: 0.5s;
+  transition-duration: 0.5s;
+  -webkit-transition-delay: 0s;
+  -moz-transition-delay: 0s;
+  -o-transition-delay: 0s;
+  -ms-transition-delay: 0s;
+  transition-delay: 0s;
+  -webkit-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -moz-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -o-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -ms-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transition-transition-timing-function: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  -webkit-transition-property: all;
+  -moz-transition-property: all;
+  -ms-transition-property: all;
+  transition-property: all;
+  opacity: 0;
+}
+.message.on {
+  opacity: 1;
+  top: 45%;
+}
+.literally {
+  position: fixed;
+  left: -999px;
+}
+.hud {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: url('../../images/vignette.png');
+  background-size: cover;
+}
+.hud img {
+  position: absolute;
+  opacity: 1;
+}
+.hud .tl {
+  top: 0;
+  left: 0;
+  width: 417px;
+  opacity: .3;
+}
+.hud .tr {
+  width: 944px;
+  top: 0;
+  right: 0;
+  opacity: .3;
+}
+.hud .tr.on {
+  opacity: 1;
+}
+.hud .br {
+  bottom: 0;
+  right: 0;
+  width: 437px;
+}
+.hud .bl {
+  left: 0;
+  width: 437px;
+  bottom: 0;
+  -webkit-animation: blink 1s infinite;
+  -moz-animation: blink 1s infinite;
+  animation: blink 1s infinite;
+  cursor: pointer;
+}
+@media screen and (max-width: 1000px) {
+  .hud .bl {
+    bottom: 60px;
+    width: 100%;
+  }
+}
+.hud .bl:hover {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  opacity: 1;
+}
+.hud .bl.synced {
+  -webkit-animation: none;
+  -moz-animation: none;
+  animation: none;
+  opacity: .9;
+}
