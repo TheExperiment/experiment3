@@ -6,44 +6,44 @@ var currY = 0;
 
 var scene = new THREE.Scene({background: 0x00ff00});
 var camera = new THREE.PerspectiveCamera( 85, winW / winH, 0.1, 1000 );
-var directionalLight, pointLight;
-var lightAdded = false;
 
 var renderer = new THREE.WebGLRenderer();
 renderer.setSize( winW, winH );
-renderer.setClearColorHex( 0x000000, 1 );
+
 document.body.appendChild( renderer.domElement );
 
 var shape = new THREE.Object3D();
 
-var plane1_material = new THREE.MeshDepthMaterial({ 
+
+var plane1_material = new THREE.MeshPhongMaterial({ 
   // map:THREE.ImageUtils.loadTexture('images/person.jpg'), transparent: true
   map: plane1_material
 })
 var plane1Geo = new THREE.BoxGeometry(100, 150, 3)
 var plane1 = new THREE.Mesh(plane1Geo,plane1_material);
-
+plane1.receiveShadow = true;
 shape.add(plane1);
 
-var plane2_material = new THREE.MeshDepthMaterial({ 
+var plane2_material = new THREE.MeshPhongMaterial({ 
   map: plane2_material
 });
 var plane2Geo = new THREE.BoxGeometry(100, 150, 3)
 var plane2 = new THREE.Mesh(plane2Geo,plane2_material);
-
+plane2.castShadow = true;
+plane2.receiveShadow = true;
 plane1.callback = function() { alert( this.name ); }
 
 shape.add(plane2);
 
-var plane3_material = new THREE.MeshDepthMaterial({
+var plane3_material = new THREE.MeshPhongMaterial({
   // map:THREE.ImageUtils.loadTexture('images/person.jpg'), transparent: true
   map: plane3_material
 })
 var plane3Geo = new THREE.BoxGeometry(100, 150, 3)
 var plane3 = new THREE.Mesh(plane1Geo,plane3_material);
-
+plane3.castShadow = true;
+plane3.receiveShadow = true;
 shape.add(plane3);
-
 scene.add(shape);
 
 plane2.rotation.x = 1.5708
@@ -77,11 +77,10 @@ function render() {
   shape.rotation.x = ypos/300
 }
 function initLights() {
-  var light = new THREE.DirectionalLight( 0xcccccc );
-  light.position.set( -10, 5, 5 ).normalize();
-  var light2 = new THREE.DirectionalLight( 0x666676 );
-  light2.position.set( -22, -21.5, 0 ).normalize();
-  scene.add( light,light2 );
+  var light = new THREE.DirectionalLight(0xffffff, 1);
+      light.position.x = -100;
+      light.position.y = 150;
+      scene.add(light);
 }
 var position
 var target
@@ -201,3 +200,6 @@ function findxy(res, e) {
       currY = ypos;
       moveCamera()
 }
+
+
+
