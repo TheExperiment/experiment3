@@ -10,9 +10,10 @@
   var pointLight, pointLight2;
   var torusKnot;
   var plane1, plane2, plane3;
-  var lines;
+  var lines, lightLine, lightLine_geo;
   var cubeMaterial;
-  var shape;
+  var poly;
+  var lights;
 
   init();
   animate();
@@ -53,29 +54,61 @@
 
     }
 
+    lights = new THREE.Object3D();
+
     pointLight1 = createLight( 0x332333 );
-    scene.add( pointLight1 );
+    lights.add( pointLight1 );
 
     pointLight2 = createLight( 0x433333 );
-    scene.add( pointLight2 );
+    lights.add( pointLight2 );
 
     pointLight3 = createLight( 0x543444 );
-    scene.add( pointLight3 );
+    lights.add( pointLight3 );
 
     pointLight4 = createLight( 0x654555 );
-    scene.add( pointLight4 );
+    lights.add( pointLight4 );
+
+    lines_material = new THREE.LineBasicMaterial({
+      color: 0x999999,
+      linewidth: .04,
+      opacity: 0.1,
+      transparent: true
+    });
+
+    lightLine_geo = new THREE.Geometry();
+    lightLine_geo.vertices.push(
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(20, 20, 10),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(-15, 15, 15),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(12, -15, 15),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(15, 15, -15),
+      new THREE.Vector3(0, 0, 0),
+      new THREE.Vector3(-10, -20, -20)
+    )
+
+    lightLine = new THREE.Line( lightLine_geo, lines_material );
+    lights.add( lightLine );
+
+    lightLine = new THREE.Line( lightLine_geo, lines_material );
+    lights.add( lightLine );
+
+    lights.add( lightLine )
+    scene.add( lights )
 
 
-    pointLight1.position.x = 25 
-    pointLight1.position.y = 25
-    pointLight1.position.z = 25  
+    pointLight1.position.x = 20 
+    pointLight1.position.y = 20
+    pointLight1.position.z = 10  
 
     pointLight2.position.x = -15 
     pointLight2.position.y = 15
     pointLight2.position.z = 15
 
     pointLight3.position.x = 12 
-    pointLight3.position.y = -25
+    pointLight3.position.y = -15
     pointLight3.position.z = 15
 
     pointLight4.position.x = 15 
@@ -86,12 +119,6 @@
     // Meshes
 
     poly = new THREE.Object3D();
-    var lines = new THREE.LineBasicMaterial({
-      color: 0x999999,
-      linewidth: .04,
-      opacity: 0.1,
-      transparent: true
-    });
 
     var lines_geometry = new THREE.Geometry();
     lines_geometry.vertices.push(
@@ -114,8 +141,8 @@
       new THREE.Vector3( -10, 0, 0)
     );
 
-    var lines1 = new THREE.Line( lines_geometry, lines );
-    poly.add(lines1);
+    lines1 = new THREE.Line( lines_geometry, lines_material );
+    poly.add( lines1 );
 
     var plane_material = new THREE.MeshPhongMaterial({ 
       // map:THREE.ImageUtils.loadTexture('images/person.jpg'), transparent: true,
@@ -183,12 +210,10 @@
     plane3.position.x += .02*(0-plane3.position.x)
     controls.update();
     render();
-    // plane3.scale.y = xpos/40
-    // plane2.scale.y = xpos/40
-    // plane1.scale.y = xpos/40
-    // plane3.scale.x = ypos/100
-    // plane2.scale.x = ypos/100
-    // plane1.scale.x = ypos/100
+    
+    lights.rotation.x = currY/500
+    lights.rotation.y = currX/500
+    lights.rotation.z = currX/500
 
   }
 
